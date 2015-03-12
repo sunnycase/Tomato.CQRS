@@ -11,10 +11,15 @@ namespace Tomato.CQRS
     /// </summary>
     public class RoutedEventArgs : EventArgs
     {
+        private bool isHandled = false;
         /// <summary>
         /// 表示事件已被处理
         /// </summary>
-        public bool IsHandled { get; set; } = false;
+        public bool IsHandled
+        {
+            get { return isHandled; }
+            set { isHandled = value; }
+        }
     }
 
     /// <summary>
